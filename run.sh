@@ -7,3 +7,4 @@
 #   |___/                                  
 #
 echo "Graviton Start"
+python --version
