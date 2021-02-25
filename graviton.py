@@ -16,5 +16,5 @@ def rt_default():
     resp_json = json.dumps(resp)
     return Response(resp_json, mimetype='application/json')
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+#if __name__ == '__main__':
+#    app.run(host='0.0.0.0', port=80)
