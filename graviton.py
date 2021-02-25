@@ -1,4 +1,5 @@
 from flask import Flask, Response
+from datetime import datetime
 import json
 
 app = Flask(__name__)
@@ -10,7 +11,9 @@ def rt_default():
         'type': 'response',
         'id': '2',
         'attributes': {
-          'status': "success"}
+          'status': "success",
+          'timestamp': datetime.now()
+        }
       }]
     }
     resp_json = json.dumps(resp)
