@@ -9,4 +9,5 @@
 echo "Graviton Start"
 cd /mnt/graviton
 pip install -r requirements.txt 
-python graviton.py
+#python graviton.py
+gnuicorn graviton:app
