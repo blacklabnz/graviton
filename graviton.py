@@ -22,9 +22,10 @@ conn = 'snowflake://{user}:{password}@{account}/{database}/{schema}'.format(
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI']=conn
-#app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'client_session_keep_alive': True}
+#app.config['SQLALCHEMY_ENGINE_OPTIONS'] = 
 
 db = SQLAlchemy(app)
+SQLAlchemy.apply_driver_hacks(app,conn,{'client_session_keep_alive': True})
 #ma = Marshmallow(app)
 api = Api(app)
 
