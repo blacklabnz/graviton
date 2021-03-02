@@ -5,7 +5,7 @@ az container create \
     --name $CONTAINER_NAME \
     --resource-group rg-flaskapi-dev \
     --image python:3.6 \
-    --vnet aci-vnet \
+    --vnet rg-flaskapi-dev-vnet \
     --vnet-address-prefix 10.0.0.0/24 \
     --subnet aci-subnet \
     --subnet-address-prefix 10.0.0.0/24
