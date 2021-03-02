@@ -9,7 +9,7 @@ az container create \
     --ports 80 \
     --gitrepo-url https://github.com/dg-hub/graviton.git \
     --gitrepo-mount-path /mnt/graviton \
-    --command-line "/bin/bash -c '/mnt/graviton/run.sh'" \
+    --command-line "/bin/sh -c '/mnt/graviton/run.sh'" \
     --restart-policy Never \
     --cpu 1 \
     --memory 1
