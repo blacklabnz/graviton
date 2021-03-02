@@ -1,10 +1,10 @@
 #!/bin/bash
-
+CONTAINER_NAME=aci-graviton-$RANDOM
 az container create \
-    --name aci-flaskapi \
+    --name $CONTAINER_NAME \
     --resource-group rg-flaskapi-dev \
     --image python:3.6-alpine \
-    --dns-name-label aci-flaskapi-$RANDOM \
+    --dns-name-label $CONTAINER_NAME \
     --query ipAddress.fqdn \
     --ports 80 \
     --gitrepo-url https://github.com/dg-hub/graviton.git \
