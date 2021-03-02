@@ -1,3 +1,6 @@
 Flask
 gunicorn
 snowflake-sqlalchemy
+flask_sqlalchemy
+Flask-RESTful
+flask-marshmallow
