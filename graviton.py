@@ -31,6 +31,4 @@ user.register_class(db)
 api.add_resource(user.get_list_resource(db), '/users')
 api.add_resource(user.get_resource(db), '/users/<int:user_id>')
 
-#db.create_all()
-#app.run(port=8080)
-
+db.create_all()
