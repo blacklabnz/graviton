@@ -1,5 +1,6 @@
 Flask
 gunicorn
+pyarrow
 snowflake-connector-python
 snowflake-sqlalchemy
 flask_sqlalchemy
