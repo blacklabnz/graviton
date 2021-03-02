@@ -3,7 +3,7 @@ CONTAINER_NAME=aci-graviton-$RANDOM
 az container create \
     --name $CONTAINER_NAME \
     --resource-group rg-flaskapi-dev \
-    --image python:3.6-alpine \
+    --image python:3.6 \
     --dns-name-label $CONTAINER_NAME \
     --query ipAddress.fqdn \
     --ports 80 \
