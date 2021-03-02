@@ -10,7 +10,7 @@ import sys
 #https://gist.github.com/Babatunde13/81866103136d20090a6f5c17f5de336b
 #https://github.com/rahmanfadhil/flask-rest-api
 
-snf_password = sys.argv["SNOWFLAKE_PASSWORD"]
+snf_password = sys.env["SNOWFLAKE_PASSWORD"]
 
 conn = 'snowflake://{user}:{password}@{account}/{database}/{schema}'.format(
         user='adminuser',
