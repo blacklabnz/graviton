@@ -25,7 +25,7 @@ app.config['SQLALCHEMY_DATABASE_URI']=conn
 #app.config['SQLALCHEMY_ENGINE_OPTIONS'] = 
 
 db = SQLAlchemy(app)
-SQLAlchemy.apply_driver_hacks(app,conn,{'client_session_keep_alive': True})
+#SQLAlchemy.apply_driver_hacks(app,conn,{'client_session_keep_alive': True})
 #ma = Marshmallow(app)
 api = Api(app)
 
