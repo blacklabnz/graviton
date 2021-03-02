@@ -1,6 +1,6 @@
 #!/bin/bash
-CONTAINER_NAME=aci-graviton-$RANDOM
 SNOWFLAKE_PASSWORD=""
+CONTAINER_NAME=aci-graviton-$RANDOM
 az container create \
     --name $CONTAINER_NAME \
     --resource-group rg-flaskapi-dev \
