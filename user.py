@@ -59,7 +59,7 @@ def get_resource(db):
             if 'name' in request.json:
                 user.name = request.json['name']
             if 'email' in request.json:
-                user.email = request.json['email'
+                user.email = request.json['email']
             db.session.commit()
             return post_schema.dump(user)
 
