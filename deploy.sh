@@ -7,9 +7,7 @@ az container create \
     --image python:3.6 \
     --vnet rg-flaskapi-dev-vnet \
     --vnet-address-prefix 10.0.0.0/24 \
-    --subnet aci-subnet \
-    --subnet-address-prefix 10.0.0.0/24
-#    --dns-name-label $CONTAINER_NAME \
+    --subnet default \
     --environment-variables SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD \
     --query ipAddress.fqdn \
     --ports 80 \
@@ -19,3 +17,6 @@ az container create \
     --restart-policy Never \
     --cpu 1 \
     --memory 1
+
+#    --dns-name-label $CONTAINER_NAME \
+#    --subnet-address-prefix 10.0.0.0/24 \
