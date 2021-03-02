@@ -5,10 +5,10 @@ az container create \
     --name $CONTAINER_NAME \
     --resource-group "rg-flaskapi-dev" \
     --image python:3.6 \
-    --vnet "vnet-graviton-dev" \
-    --vnet-address-prefix "10.0.0.0/24" \
+    --vnet "vnet-flaskapi-dev" \
+    --vnet-address-prefix "10.0.0.0/16" \
     --subnet "default" \
-    --subnet-address-prefix "10.0.0.0/24" \
+    --subnet-address-prefix "10.0.1.0/24" \
     --environment-variables SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD \
     --query ipAddress.fqdn \
     --ports 80 \
