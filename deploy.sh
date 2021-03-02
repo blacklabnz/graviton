@@ -6,7 +6,7 @@ az container create \
     --resource-group rg-flaskapi-dev \
     --image python:3.6 \
     --dns-name-label $CONTAINER_NAME \
-    --environment-variables SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD
+    --environment-variables SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD \
     --query ipAddress.fqdn \
     --ports 80 \
     --gitrepo-url https://github.com/dg-hub/graviton.git \
