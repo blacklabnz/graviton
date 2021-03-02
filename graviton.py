@@ -1,23 +1,36 @@
-from flask import Flask, Response
-from datetime import datetime
-import json
+from sqlalchemy import create_engine,Sequence
+from flask import Flask, jsonify, request
+from flask_sqlalchemy import SQLAlchemy
+from flask_restful import Api, Resource
+from flask_marshmallow import Marshmallow
+import user
+import uuid
+import sys
+
+#https://gist.github.com/Babatunde13/81866103136d20090a6f5c17f5de336b
+#https://github.com/rahmanfadhil/flask-rest-api
+
+snf_password = sys.argv["SNOWFLAKE_PASSWORD"]
+
+conn = 'snowflake://{user}:{password}@{account}/{database}/{schema}'.format(
+        user='adminuser',
+        password=snf_password,
+        account='uy60020.australia-east.azure',
+        database = 'DQ',
+        schema = 'app',
+    )
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI']=conn
+db = SQLAlchemy(app)
+#ma = Marshmallow(app)
+api = Api(app)
 
-@app.route('/')
-def rt_default():
-    resp = {
-      'data': [{
-        'type': 'response',
-        'id': '2',
-        'attributes': {
-          'status': "success",
-          'timestamp': datetime.now()
-        }
-      }]
-    }
-    resp_json = json.dumps(resp)
-    return Response(resp_json, mimetype='application/json')
+user.register_class(db)
 
-#if __name__ == '__main__':
-#    app.run(host='0.0.0.0', port=80)
+api.add_resource(user.get_list_resource(db), '/users')
+api.add_resource(user.get_resource(db), '/users/<int:user_id>')
+
+#db.create_all()
+#app.run(port=8080)
+
