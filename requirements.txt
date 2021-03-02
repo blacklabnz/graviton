@@ -1,5 +1,6 @@
 Flask
 gunicorn
+snowflake-connector-python
 snowflake-sqlalchemy
 flask_sqlalchemy
 Flask-RESTful
