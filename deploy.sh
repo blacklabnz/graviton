@@ -5,7 +5,11 @@ az container create \
     --name $CONTAINER_NAME \
     --resource-group rg-flaskapi-dev \
     --image python:3.6 \
-    --dns-name-label $CONTAINER_NAME \
+    --vnet aci-vnet \
+    --vnet-address-prefix 10.0.0.0/24 \
+    --subnet aci-subnet \
+    --subnet-address-prefix 10.0.0.0/24
+#    --dns-name-label $CONTAINER_NAME \
     --environment-variables SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD \
     --query ipAddress.fqdn \
     --ports 80 \
