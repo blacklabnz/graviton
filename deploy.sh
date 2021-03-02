@@ -3,7 +3,7 @@
 az container create \
     --name aci-flaskapi \
     --resource-group rg-flaskapi-dev \
-    --image python \
+    --image python:3.6-alpine \
     --dns-name-label aci-flaskapi-$RANDOM \
     --query ipAddress.fqdn \
     --ports 80 \
