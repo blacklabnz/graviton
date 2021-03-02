@@ -5,12 +5,12 @@ from flask_restful import Api, Resource
 from flask_marshmallow import Marshmallow
 import user
 import uuid
-import sys
+import os
 
 #https://gist.github.com/Babatunde13/81866103136d20090a6f5c17f5de336b
 #https://github.com/rahmanfadhil/flask-rest-api
 
-snf_password = sys.env["SNOWFLAKE_PASSWORD"]
+snf_password = os.getenv('SNOWFLAKE_PASSWORD')
 
 conn = 'snowflake://{user}:{password}@{account}/{database}/{schema}'.format(
         user='adminuser',
