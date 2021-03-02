@@ -1,10 +1,12 @@
 #!/bin/bash
 CONTAINER_NAME=aci-graviton-$RANDOM
+SNOWFLAKE_PASSWORD=""
 az container create \
     --name $CONTAINER_NAME \
     --resource-group rg-flaskapi-dev \
     --image python:3.6 \
     --dns-name-label $CONTAINER_NAME \
+    --env SNOWFLAKE_PASSWORD=$SNOWFLAKE_PASSWORD
     --query ipAddress.fqdn \
     --ports 80 \
     --gitrepo-url https://github.com/dg-hub/graviton.git \
